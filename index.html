@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тестирование</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="quiz-container">
+            <h1 class="title">Проверка усвоенного материала</h1>
+            <div class="question" id="question">
+                <!-- Текущий вопрос -->
+                Вопрос 1: Какую тему по математике вы сейчас проходите
+            </div>
+            <div class="options" id="options">
+                <!-- Здесь будут варианты ответа -->
+                <button onclick="nextQuestion('Функция')" class="btn">Функция</button>
+                <button onclick="nextQuestion('Дроби')" class="btn">Дроби</button>
+                <button onclick="nextQuestion('Степени')" class="btn">Степени</button>
+                <button onclick="nextQuestion('+ и - числа')" class="btn">+ и - числа</button>
+            </div>
+            <div class="result" id="result">
+                <!-- Здесь будут отображаться результаты тестов -->
+            </div>
+            <button class="support">Поддержка</button>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>
