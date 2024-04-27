@@ -1,34 +1,36 @@
 //Массив с вопросами, вариантами ответов и правильными ответами
 let questions = [
     {
-        question: "Сколько лет Python",
-        options: ["10", "2", "67", "33"],
-        correctAnswer: "33"
+        question: "Когда повесили знамя над рейхстагом?",
+        correctAnswer: "01.05.1945"
     },
     {
-        question: "Решите пример: 2 + 2 * 2",
-        options: ["8", "6", "Не знаю", "Вам надо вы и решайте"],
-        correctAnswer: "6"
+        question: "В каком году началась Великая Отечественная Война",
+        correctAnswer: "1945"
     },
     {
-        question: "Назовите формулу функции",
-        options: ["y = kx + b", "2a + 2b", "a + b", "2ab"],
-        correctAnswer: "y = kx + b"
+        question: "Чье оружие изображено на кртинке",
+        correctAnswer: "Гитлера"
     },
     {
-        question: "Где родился Чингисхан",
-        options: ["Пекин", "Париж", "Хэнтэй", "Москва"],
-        correctAnswer: "Хэнтэй"
+        question: "Какая настоящая фамилия у Сталина",
+        correctAnswer: "Джугашвили"
     },
     {
-        question: "Какой самый густонаселенный город в мире",
-        options: ["Дели", "Джакарта", "Тюмень", "Воркута"],
-        correctAnswer: "Дели"
+        question: "Как звали сына у Сталина",
+        correctAnswer: "Василий"
     },
     {
-        question: "2 + 2",
-        options: ["0", "Слишком сложно", "5", "4"],
-        correctAnswer: "4"
+        question: "Сколько патронов находится в магазине AK-47",
+        correctAnswer: "30"
+    },
+    {
+        question: "В каком году была основана компания Walter",
+        correctAnswer: "1886"
+    },
+    {
+        question: "Сколько дней длилась Блокада Ленинграда",
+        correctAnswer: "872"
     },
 
 ];
@@ -45,12 +47,12 @@ function displayQuestion() {
     let questionElement = document.getElementById('question'); //Получим блок куда размещать вопрос
     questionElement.textContent = `Вопрос ${currentQuestion + 1}: ${questions[currentQuestion].question}`
     //Получим блок кнопок
-    let optionsElement = document.getElementById('options');
+    let contbtnElement = document.getElementById('contbtn');
     //Очистим блок с кнопками
     optionsElement.innerHTML = '';
 
     //Массив ответов
-    let optionsArray = questions[currentQuestion].options;
+    let Array = questions[currentQuestion].options;
 
     //Создать кнопки с вариантами ответов и привязать к ним функцию nextQuestion
     optionsArray.forEach((option) => {
@@ -69,8 +71,10 @@ function displayQuestion() {
 
 }
 
+let input = document.getElementById('input')
+
 function nextQuestion(answer) {
-    if (answer === questions[currentQuestion].correctAnswer) {
+    if (input.value === questions[currentQuestion].correctAnswer) {
         correctAnswers++;
     } else {
         uncorrect.push(questions[currentQuestion].question)
@@ -122,6 +126,8 @@ function displayResult() {
         uncorrectAnswer.innerHTML = item
     })
 }
+
+
 
 
 
